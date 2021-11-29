@@ -2,7 +2,7 @@
 
 def hello
   puts 'hello woldo'
-  puts 'hi you'
+  #i dt know how to code in ruby :)
 end
 
 hello()   
