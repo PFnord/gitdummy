@@ -1,15 +1,15 @@
 " Set compatibility to Vim only.
 set nocompatible
 
-call plug#begin()
+"call plug#begin()
 
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 
-call plug#end()
+"call plug#end()
 
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
-
+filetype plugin on
 " Turn on syntax highlighting.
 syntax on
 
@@ -141,3 +141,4 @@ function NoShow()
 endfunction
 autocmd FileType python cmap wq call NoShow()
 autocmd FileType python cnoreabbrev <expr> q winnr("$") > 1 && getcmdtype() == ":" && getcmdline() == 'q' ? 'ccl <BAR> q' : 'q'
+
