@@ -24,7 +24,6 @@ set wrap
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
 
 " Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
 " set textwidth=79
@@ -139,6 +138,11 @@ function NoShow()
     let g:flake8_show_quickfix=0
     wq
 endfunction
-autocmd FileType python cmap wq call NoShow()
+"autocmd FileType python cmap wq call NoShow()
 autocmd FileType python cnoreabbrev <expr> q winnr("$") > 1 && getcmdtype() == ":" && getcmdline() == 'q' ? 'ccl <BAR> q' : 'q'
 
+" Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+filetype plugin on
+syntax on
